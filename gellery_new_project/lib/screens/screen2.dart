@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DetailPage(),
+      home: Bunter(),
     );
   }
 }
 
-class DetailPage extends StatelessWidget {
+class Bunter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/ski.jpeg',
+              'assets/basketball_1.jpeg',
               width: double.infinity,
               height: 600,
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Adrenalin pur!",
+                    'Bunter Basketball',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "14.07.2020",
+                    '03.06.2023',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -54,10 +54,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Ein Skifahrer in voller Montur fliegt mutig über einen schneebedeckten Hügel, "
-                    "während der klare, blaue Himmel im Hintergrund strahlt. Die Sonne scheint hell, "
-                    "beleuchtet die funkelnden Schneeflocken und erzeugt eine Szenerie voller Adrenalin und Freiheit. "
-                    "Der Moment, in dem der Fahrer die Schwerkraft überwindet, wird in einem spektakulären Bild festgehalten.",
+                    'Ein farbenfrohes Basketballfeld im Freien. Im Zentrum steht ein Basketballkorb, dessen weißes Netz im leichten Wind schaukelt. Die Farben des Spielfelds leuchten unter der warmen Abendsonne. Vor vielen Jahren, während eines Sommerabends, trafen sich hier Freunde zu einem unvergesslichen Spiel, bei dem die Sieger den Sonnenuntergang bejubelten.',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
