@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DetailPage(),
+      home: Runners(),
     );
   }
 }
 
-class DetailPage extends StatelessWidget {
+class Runners extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/ski.jpeg',
+              'assets/running.jpeg',
               width: double.infinity,
               height: 600,
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Adrenalin pur!",
+                    'Runners High',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "14.07.2020",
+                    '22.09.2023',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -54,10 +54,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Ein Skifahrer in voller Montur fliegt mutig über einen schneebedeckten Hügel, "
-                    "während der klare, blaue Himmel im Hintergrund strahlt. Die Sonne scheint hell, "
-                    "beleuchtet die funkelnden Schneeflocken und erzeugt eine Szenerie voller Adrenalin und Freiheit. "
-                    "Der Moment, in dem der Fahrer die Schwerkraft überwindet, wird in einem spektakulären Bild festgehalten.",
+                    'Unsere acht Läufer bewegen sich hier in einer beeindruckenden Dreiecks-Formation über die Bahnen des sonnigen Sportplatzes am Mauerpark. Alle Athleten sind synchronisiert, ihre Schritte im perfekten Einklang, während sie die rote Tartanbahn unter ihren Füßen spüren. An einem kühlen Herbstmorgen, während eines intensiven Trainings, wurde diese Formation gewählt, um Teamarbeit und Präzision zu perfektionieren, und es war ein Moment, der die Entschlossenheit und den Zusammenhalt der Gruppe widerspiegelte.',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
@@ -72,3 +69,12 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+/*
+GalleryItem(
+    imageTitle: 'Runners High',
+    imageDate: '22.09.2023',
+    imageDescription:
+        'Unsere acht Läufer bewegen sich hier in einer beeindruckenden Dreiecks-Formation über die Bahnen des sonnigen Sportplatzes am Mauerpark. Alle Athleten sind synchronisiert, ihre Schritte im perfekten Einklang, während sie die rote Tartanbahn unter ihren Füßen spüren. An einem kühlen Herbstmorgen, während eines intensiven Trainings, wurde diese Formation gewählt, um Teamarbeit und Präzision zu perfektionieren, und es war ein Moment, der die Entschlossenheit und den Zusammenhalt der Gruppe widerspiegelte.',
+    imagePath: 'assets/images/running.jpg',
+
+*/ 
