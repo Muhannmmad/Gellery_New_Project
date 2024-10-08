@@ -8,19 +8,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'MyGallery',
       home: MyGalleryPage(),
     );
   }
 }
 
-class MyGalleryPage extends StatefulWidget {
-  @override
-  MyGalleryPageState createState() => MyGalleryPageState();
-}
-
-class MyGalleryPageState extends State<MyGalleryPage> {
-  int selectedIndex = 0;
-
+class MyGalleryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +23,23 @@ class MyGalleryPageState extends State<MyGalleryPage> {
         foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 98, 2, 110),
       ),
-      body: selectedIndex == 0 ? buildImageGrid() : buildAboutMe(),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+          children: [
+            buildImageTile('assets/basketball_1.jpeg', 'Bunter Basketball'),
+            buildImageTile('assets/ski.jpeg', 'Adrenalin pur!'),
+            buildImageTile('assets/bike.jpeg', 'Achtung Kurve'),
+            buildImageTile('assets/running.jpeg', 'Runners High'),
+            buildImageTile('assets/basketball_2.jpeg', 'Swish'),
+            buildImageTile('assets/tennis_1.jpeg', 'Ball Game'),
+            buildImageTile('assets/tennis_2.jpeg', 'Sieg in der Natur'),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -45,47 +55,30 @@ class MyGalleryPageState extends State<MyGalleryPage> {
     );
   }
 
-  Widget buildImageGrid() {
-    return GridView.count(
-      crossAxisCount: 2, // Two columns
-      mainAxisSpacing: 0, // No space between rows
-      crossAxisSpacing: 0, // No space between columns
+  Widget buildImageTile(String imagePath, String label) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        buildImageCard('Bunter Basketball', 'assets/basketball_1.jpeg'),
-        buildImageCard('Adrenalin pur!', 'assets/ski.jpeg'),
-        buildImageCard('Achtung Kurve', 'assets/bike.jpeg'),
-        buildImageCard('Runners High', 'assets/running.jpeg'),
-        buildImageCard('Swish', 'assets/basketball_2.jpeg'),
-        buildImageCard('Ball Game', 'assets/tennis_1.jpeg'),
-        buildImageCard('Sieg in der Natur', 'assets/tennis_2.jpeg'),
-      ],
-    );
-  }
-
-  Widget buildImageCard(String title, String imagePath) {
-    return Card(
-      margin: EdgeInsets.zero, // Removed space between cards
-      elevation: 0, // No card shadow
-      child: Column(
-        children: [
-          Expanded(
+        Expanded(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               imagePath,
-              fit: BoxFit.cover, // Ensure the image covers the entire box
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(title),
+        ),
+        SizedBox(height: 8),
+        Text(
+          label,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildAboutMe() {
-    return Center(
-      child: Text('Über mich page content'),
+        ),
+      ],
     );
   }
 }
