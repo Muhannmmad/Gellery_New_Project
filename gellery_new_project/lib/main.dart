@@ -1,106 +1,91 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyGalleryApp());
+  runApp(MyApp());
 }
 
-class MyGalleryApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: MyGalleryPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class MyGalleryPage extends StatefulWidget {
   @override
-  HomePageState createState() => HomePageState();
+  MyGalleryPageState createState() => MyGalleryPageState();
 }
 
-class HomePageState extends State<HomePage> {
+class MyGalleryPageState extends State<MyGalleryPage> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 98, 0, 57),
-        title: Text('MyGallery'),
+        title: Text("MyGallery"),
         foregroundColor: Colors.white,
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        backgroundColor: const Color.fromARGB(255, 98, 2, 110),
       ),
-      body: Center(
-        child: GridView.builder(
-          shrinkWrap: true,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          itemCount: 4,
-          itemBuilder: (ctx, i) {
-            return Card(
-              child: Container(
-                height: 290,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                margin: EdgeInsets.all(5),
-                padding: EdgeInsets.all(5),
-                child: Stack(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(
-                          child: Image.network(
-                            'https://tech.pelmorex.com/wp-content/uploads/2020/10/flutter.png',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Text(
-                          'Title',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Subtitle',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1.0,
-            crossAxisSpacing: 0.0,
-            mainAxisSpacing: 5,
-            mainAxisExtent: 264,
-          ),
-        ),
-      ),
+      body: selectedIndex == 0 ? buildImageGrid() : buildAboutMe(),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          setState(() {});
-        },
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.image),
-            label: 'Gallery',
+            icon: Icon(Icons.photo),
+            label: 'Bilder',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'About Me',
+            label: 'Über mich',
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildImageGrid() {
+    return GridView.count(
+      crossAxisCount: 2, // Two columns
+      mainAxisSpacing: 0, // No space between rows
+      crossAxisSpacing: 0, // No space between columns
+      children: [
+        buildImageCard('Bunter Basketball', 'assets/basketball_1.jpeg'),
+        buildImageCard('Adrenalin pur!', 'assets/ski.jpeg'),
+        buildImageCard('Achtung Kurve', 'assets/bike.jpeg'),
+        buildImageCard('Runners High', 'assets/running.jpeg'),
+        buildImageCard('Swish', 'assets/basketball_2.jpeg'),
+        buildImageCard('Ball Game', 'assets/tennis_1.jpeg'),
+        buildImageCard('Sieg in der Natur', 'assets/tennis_2.jpeg'),
+      ],
+    );
+  }
+
+  Widget buildImageCard(String title, String imagePath) {
+    return Card(
+      margin: EdgeInsets.zero, // Removed space between cards
+      elevation: 0, // No card shadow
+      child: Column(
+        children: [
+          Expanded(
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover, // Ensure the image covers the entire box
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(title),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildAboutMe() {
+    return Center(
+      child: Text('Über mich page content'),
     );
   }
 }
