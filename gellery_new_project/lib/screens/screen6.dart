@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DetailPage(),
+      home: Ball(),
     );
   }
 }
 
-class DetailPage extends StatelessWidget {
+class Ball extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/ski.jpeg',
+              'assets/tennis_1.jpeg',
               width: double.infinity,
               height: 600,
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Adrenalin pur!",
+                    'Ball Game',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "14.07.2020",
+                    '29.11.2023',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -54,10 +54,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Ein Skifahrer in voller Montur fliegt mutig über einen schneebedeckten Hügel, "
-                    "während der klare, blaue Himmel im Hintergrund strahlt. Die Sonne scheint hell, "
-                    "beleuchtet die funkelnden Schneeflocken und erzeugt eine Szenerie voller Adrenalin und Freiheit. "
-                    "Der Moment, in dem der Fahrer die Schwerkraft überwindet, wird in einem spektakulären Bild festgehalten.",
+                    'Die Nahaufnahme zeigt einen gelb-grünen Tennisball, der auf dem glänzenden Boden der Sporthalle liegt. Die Textur des Balls ist deutlich sichtbar, während das gedämpfte Licht der Halle eine ruhige Atmosphäre schafft. An einem regnerischen Nachmittag fand hier ein spannendes Match statt, bei dem dieser Ball im entscheidenden Moment des Spiels eine wichtige Rolle spielte.',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
@@ -72,3 +69,8 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+/* imageTitle: 'Ball Game',
+    imageDate: '29.11.2023',
+    imageDescription:
+        'Die Nahaufnahme zeigt einen gelb-grünen Tennisball, der auf dem glänzenden Boden der Sporthalle liegt. Die Textur des Balls ist deutlich sichtbar, während das gedämpfte Licht der Halle eine ruhige Atmosphäre schafft. An einem regnerischen Nachmittag fand hier ein spannendes Match statt, bei dem dieser Ball im entscheidenden Moment des Spiels eine wichtige Rolle spielte.',
+    imagePath: 'assets/images/tennis_1.jpg',*/
