@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DetailPage(),
+      home: Achtung(),
     );
   }
 }
 
-class DetailPage extends StatelessWidget {
+class Achtung extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/ski.jpeg',
+              'assets/bike.jpeg',
               width: double.infinity,
               height: 600,
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Adrenalin pur!",
+                    'Achtung Kurve',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "14.07.2020",
+                    '18.06.2022',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -54,10 +54,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Ein Skifahrer in voller Montur fliegt mutig über einen schneebedeckten Hügel, "
-                    "während der klare, blaue Himmel im Hintergrund strahlt. Die Sonne scheint hell, "
-                    "beleuchtet die funkelnden Schneeflocken und erzeugt eine Szenerie voller Adrenalin und Freiheit. "
-                    "Der Moment, in dem der Fahrer die Schwerkraft überwindet, wird in einem spektakulären Bild festgehalten.",
+                    'Eine große Gruppe Rennradfahrer legt sich synchron in eine scharfe Kurve, während sie mit beeindruckender Geschwindigkeit die Strecke entlangrasen. Die bunten Trikots der Fahrer leuchten im Sonnenschein, und ihre Konzentration ist greifbar. Vor einigen Jahren, während eines spannenden Wettkampfs an einem sonnigen Frühlingstag, markierte diese Kurve den Wendepunkt des Rennens und wurde zum Schauplatz eines packenden Duells um die Spitze.',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
