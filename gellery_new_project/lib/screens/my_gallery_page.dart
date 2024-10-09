@@ -76,9 +76,9 @@ class MyGalleryPage extends StatelessWidget {
         ],
         onTap: (index) {
           if (index == 0) {
-            Navigator.pushNamed(context, '/main'); // Navigate to 'main'
+            Navigator.pushNamed(context, '/main');
           } else if (index == 1) {
-            Navigator.pushNamed(context, '/profile'); // Navigate to 'profile'
+            Navigator.pushNamed(context, '/profile');
           }
         },
       ),
