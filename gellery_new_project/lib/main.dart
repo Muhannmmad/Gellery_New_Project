@@ -30,13 +30,29 @@ class MyGalleryPage extends StatelessWidget {
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
           children: [
-            buildImageTile('assets/basketball_1.jpeg', 'Bunter Basketball'),
-            buildImageTile('assets/ski.jpeg', 'Adrenalin pur!'),
-            buildImageTile('assets/bike.jpeg', 'Achtung Kurve'),
-            buildImageTile('assets/running.jpeg', 'Runners High'),
-            buildImageTile('assets/basketball_2.jpeg', 'Swish'),
-            buildImageTile('assets/tennis_1.jpeg', 'Ball Game'),
-            buildImageTile('assets/tennis_2.jpeg', 'Sieg in der Natur'),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile(
+                    'assets/basketball_1.jpeg', 'Bunter Basketball')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile('assets/ski.jpeg', 'Adrenalin pur!')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile('assets/bike.jpeg', 'Achtung Kurve')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile('assets/running.jpeg', 'Runners High')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile('assets/basketball_2.jpeg', 'Swish')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile('assets/tennis_1.jpeg', 'Ball Game')),
+            GestureDetector(
+                onTap: () {},
+                child: buildImageTile(
+                    'assets/tennis_2.jpeg', 'Sieg in der Natur')),
           ],
         ),
       ),
