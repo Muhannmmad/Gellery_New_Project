@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gellery_new_project/my_gallery_page.dart';
+import 'package:gellery_new_project/screens/my_gallery_page.dart';
 import 'package:gellery_new_project/screens/profile.dart';
 import 'package:gellery_new_project/screens/screen1.dart';
 import 'package:gellery_new_project/screens/screen2.dart';

@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProfilePage(),
-    );
-  }
-}
-
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -66,6 +53,13 @@ class ProfilePage extends StatelessWidget {
             label: 'Über mich',
           ),
         ],
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.pushNamed(context, '/main');
+          } else if (index == 1) {
+            Navigator.pushNamed(context, '/profile');
+          }
+        },
       ),
     );
   }
