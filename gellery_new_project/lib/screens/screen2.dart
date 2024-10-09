@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Bunter(),
+      home: Adrenalin(),
     );
   }
 }
 
-class Bunter extends StatelessWidget {
+class Adrenalin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class Bunter extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/basketball_1.jpeg',
+              'assets/ski.jpeg',
               width: double.infinity,
               height: 600,
               fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class Bunter extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Bunter Basketball',
+                    "Adrenalin pur!",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class Bunter extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    '03.06.2023',
+                    "14.07.2020",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -54,7 +54,10 @@ class Bunter extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Ein farbenfrohes Basketballfeld im Freien. Im Zentrum steht ein Basketballkorb, dessen weißes Netz im leichten Wind schaukelt. Die Farben des Spielfelds leuchten unter der warmen Abendsonne. Vor vielen Jahren, während eines Sommerabends, trafen sich hier Freunde zu einem unvergesslichen Spiel, bei dem die Sieger den Sonnenuntergang bejubelten.',
+                    "Ein Skifahrer in voller Montur fliegt mutig über einen schneebedeckten Hügel, "
+                    "während der klare, blaue Himmel im Hintergrund strahlt. Die Sonne scheint hell, "
+                    "beleuchtet die funkelnden Schneeflocken und erzeugt eine Szenerie voller Adrenalin und Freiheit. "
+                    "Der Moment, in dem der Fahrer die Schwerkraft überwindet, wird in einem spektakulären Bild festgehalten.",
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,

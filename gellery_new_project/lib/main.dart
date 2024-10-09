@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => MyGalleryPage(),
+        '/main': (context) => MyGalleryPage(),
         '/profile': (context) => ProfilePage(),
         '/1': (context) => Bunter(),
         '/2': (context) => Adrenalin(),
@@ -51,28 +51,49 @@ class MyGalleryPage extends StatelessWidget {
           mainAxisSpacing: 8,
           children: [
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile(
-                    'assets/basketball_1.jpeg', 'Bunter Basketball')),
+              onTap: () {
+                Navigator.pushNamed(context, '/1');
+              },
+              child: buildImageTile(
+                  'assets/basketball_1.jpeg', 'Bunter Basketball'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile('assets/ski.jpeg', 'Adrenalin pur!')),
+              onTap: () {
+                Navigator.pushNamed(context, '/2');
+              },
+              child: buildImageTile('assets/ski.jpeg', 'Adrenalin pur!'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile('assets/bike.jpeg', 'Achtung Kurve')),
+              onTap: () {
+                Navigator.pushNamed(context, '/3');
+              },
+              child: buildImageTile('assets/bike.jpeg', 'Achtung Kurve'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile('assets/running.jpeg', 'Runners High')),
+              onTap: () {
+                Navigator.pushNamed(context, '/4');
+              },
+              child: buildImageTile('assets/running.jpeg', 'Runners High'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile('assets/basketball_2.jpeg', 'Swish')),
+              onTap: () {
+                Navigator.pushNamed(context, '/5');
+              },
+              child: buildImageTile('assets/basketball_2.jpeg', 'Swish'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile('assets/tennis_1.jpeg', 'Ball Game')),
+              onTap: () {
+                Navigator.pushNamed(context, '/6');
+              },
+              child: buildImageTile('assets/tennis_1.jpeg', 'Ball Game'),
+            ),
             GestureDetector(
-                onTap: () {},
-                child: buildImageTile(
-                    'assets/tennis_2.jpeg', 'Sieg in der Natur')),
+              onTap: () {
+                Navigator.pushNamed(context, '/7');
+              },
+              child:
+                  buildImageTile('assets/tennis_2.jpeg', 'Sieg in der Natur'),
+            ),
           ],
         ),
       ),
@@ -87,6 +108,13 @@ class MyGalleryPage extends StatelessWidget {
             label: 'Über mich',
           ),
         ],
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.pushNamed(context, '/main'); // Navigate to 'main'
+          } else if (index == 1) {
+            Navigator.pushNamed(context, '/profile'); // Navigate to 'profile'
+          }
+        },
       ),
     );
   }
