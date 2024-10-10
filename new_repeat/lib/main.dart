@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_repeat/features/my_gallery_app_state.dart';
 import 'package:new_repeat/screens/about_me_screen.dart';
 import 'package:new_repeat/screens/detail_screen.dart';
 import 'repository/gallery_data.dart';
@@ -7,19 +8,16 @@ void main() {
   runApp(MyGalleryApp());
 }
 
-class MyGalleryApp extends StatelessWidget {
+class MyGalleryApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MyGallery',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: GalleryScreen(),
-    );
-  }
+  MyGalleryAppState createState() => MyGalleryAppState();
 }
 
 class GalleryScreen extends StatelessWidget {
+  final VoidCallback onToggleTheme;
+
+  GalleryScreen({required this.onToggleTheme});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +25,12 @@ class GalleryScreen extends StatelessWidget {
         title: Text('MyGallery'),
         foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 107, 9, 132),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6), // Icon to toggle light/dark mode
+            onPressed: onToggleTheme,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -74,30 +78,33 @@ class GalleryScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.photo),
-              label: 'Bilder',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Über mich',
-            ),
-          ],
-          selectedItemColor: const Color.fromARGB(255, 76, 2, 58),
-          onTap: (index) {
-            if (index == 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutMeScreen()),
-              );
-            } else if (index == 0) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GalleryScreen()),
-              );
-            }
-          }),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.photo),
+            label: 'Bilder',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Über mich',
+          ),
+        ],
+        selectedItemColor: const Color.fromARGB(255, 76, 2, 58),
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AboutMeScreen()),
+            );
+          } else if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      GalleryScreen(onToggleTheme: onToggleTheme)),
+            );
+          }
+        },
+      ),
     );
   }
 }

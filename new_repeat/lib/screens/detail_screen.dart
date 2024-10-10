@@ -46,7 +46,7 @@ class DetailScreen extends StatelessWidget {
                   SizedBox(height: 16),
                   Text(
                     item.imageDescription,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ],
               ),
