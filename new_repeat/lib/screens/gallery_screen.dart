@@ -1,23 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:new_repeat/features/my_gallery_app_state.dart';
+import 'package:new_repeat/repository/gallery_data.dart';
 import 'package:new_repeat/screens/about_me_screen.dart';
 import 'package:new_repeat/screens/detail_screen.dart';
-import 'package:new_repeat/slid_screen.dart';
-import 'repository/gallery_data.dart';
-
-void main() {
-  runApp(MyGalleryApp());
-}
-
-class MyGalleryApp extends StatefulWidget {
-  @override
-  MyGalleryAppState createState() => MyGalleryAppState();
-}
 
 class GalleryScreen extends StatelessWidget {
   final VoidCallback onToggleTheme;
 
-  GalleryScreen({required this.onToggleTheme});
+  const GalleryScreen({required this.onToggleTheme});
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +77,6 @@ class GalleryScreen extends StatelessWidget {
             icon: Icon(Icons.person),
             label: 'Über mich',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.slideshow),
-            label: 'Slideshow',
-          ),
         ],
         selectedItemColor: const Color.fromARGB(255, 76, 2, 58),
         onTap: (index) {
@@ -106,11 +91,6 @@ class GalleryScreen extends StatelessWidget {
               MaterialPageRoute(
                   builder: (context) =>
                       GalleryScreen(onToggleTheme: onToggleTheme)),
-            );
-          } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SlideshowScreen()),
             );
           }
         },
